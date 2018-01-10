@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- 印章action -->
+	<bean id="sealBaseAction" class="com.bhtec.action.seal.SealBaseAction"
+		scope="prototype" parent="platformBaseAction">
+	</bean>
+	<!-- 委托申报action -->
+	<bean id="sealAction" class="com.bhtec.action.seal.sealapply.SealAction"
+		scope="prototype" parent="sealBaseAction">
+		<property name="sealApplyService" ref="sealApplyService"></property>
+	</bean>
+
+	<bean id="sealDetailAction" class="com.bhtec.action.seal.sealapply.SealDetailAction"
+		  scope="prototype" parent="sealBaseAction">
+		<property name="sealApplyService" ref="sealApplyService"></property>
+	</bean>
+
+	<bean id="sealUnitAction" class="com.bhtec.action.seal.sealapply.SealUnitAction"
+		  scope="prototype" parent="sealBaseAction">
+		<property name="sealApplyService" ref="sealApplyService"></property>
+	</bean>
+	<bean id="sealChipAction" class="com.bhtec.action.seal.sealapply.SealChipAction"
+		  scope="prototype" parent="sealBaseAction">
+		<property name="sealChipService" ref="sealChipService"></property>
+	</bean>
+
+	<!-- 数据综合查询 start-->
+	<bean id="sealUnitQueryAction" class="com.bhtec.action.seal.data.SealUnitQueryAction"
+		  scope="prototype" parent="sealBaseAction">
+		<property name="sealDataQueryService" ref="sealDataQueryService"></property>
+	</bean>
+	<bean id="sealQueryAction" class="com.bhtec.action.seal.data.SealQueryAction"
+		  scope="prototype" parent="sealBaseAction">
+		<property name="sealDataQueryService" ref="sealDataQueryService"></property>
+	</bean>
+	<bean id="sealApplyQueryAction" class="com.bhtec.action.seal.data.SealApplyQueryAction"
+		  scope="prototype" parent="sealBaseAction">
+		<property name="sealDataQueryService" ref="sealDataQueryService"></property>
+	</bean>
+	<!-- 数据综合查询 end-->
+</beans>	

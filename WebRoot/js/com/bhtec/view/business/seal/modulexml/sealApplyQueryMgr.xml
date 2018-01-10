@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+    <dynamicLoadJs>
+        <!-- 印章审批单查询 -->
+        <listView>
+            <jsUrlShare>./ext/ux/grid/RowExpander.js</jsUrlShare>
+            <jsUrl>./js/com/bhtec/view/business/seal/sealapplyquery/SealApplyQueryList.js</jsUrl>
+            <jsMainClassName>com.bhtec.view.business.seal.sealapplyquery.SealApplyQueryList</jsMainClassName>
+        </listView>
+        <opView>
+            <jsUrl>./js/com/bhtec/view/business/seal/sealapplyquery/SealApplyQueryVOp.js</jsUrl>
+            <jsMainClassName>com.bhtec.view.business.seal.sealapplyquery.SealApplyQueryVOp</jsMainClassName>
+        </opView>
+    </dynamicLoadJs>
+    <fieldNames>
+        <field name="createDate">委托申报时间</field>
+        <field name="approvalNum">批单编码</field>
+        <field name="unitName">印章使用单位</field>
+        <field name="status">批单状态</field>
+        <field name="sealNum">印章数量</field>
+        <field name="approvalUnit">审批单位</field>
+        <field name="approvalPerson">审批人</field>
+        <field name="approvalTime">审批日期</field>
+        <field name="operateUnit">承刻单位</field>
+        <field name="operateTime">承刻日期</field>
+        <field name="sealUnitId">单位代码</field>
+        <field name="unitNamePy">英文名称</field>
+        <field name="companyType">企业类型</field>
+        <field name="manager">负责人</field>
+        <field name="licenseNo">单位证件号码</field>
+        <field name="certificateType">负责人证件类型</field>
+        <field name="certificateNo">负责人证件号码</field>
+        <field name="address">地址</field>
+        <field name="code">邮编</field>
+        <field name="phone">单位电话</field>
+
+        <field name="applyMemo">委托备注</field>
+        <field name="refuse">审批意见</field>
+        <field name="creator">经办人</field>
+        <field name="area">所属区域</field>
+        <field name="sealType">印章类型</field>
+        <field name="sealName">印章名称</field>
+        <field name="sealSpecification">印章规格</field>
+        <field name="bingkanType">并刊类型</field>
+        <field name="bingkanInfo">税号/并刊</field>
+        <field name="zhongkanType">中刊类型</field>
+        <field name="word1">文字一</field>
+        <field name="word2">文字二</field>
+        <field name="word3">文字三</field>
+        <field name="word4">文字四</field>
+        <field name="word5">文字五</field>
+        <field name="word6">文字六</field>
+        <field name="sealMaterial">章面材料</field>
+        <field name="oilType">印油类型</field>
+        <field name="applyPerson">审刻人</field>
+        <field name="applyPersonPhone">审刻人电话</field>
+        <field name="creatorPhone">申报人联系电话</field>
+
+        <field name="orgSimpleName">机构简称</field>
+        <field name="orgFullName">机构全称</field>
+        <field name="orgCode">机构代码</field>
+        <field name="orgAddress1">联系地址1</field>
+        <field name="orgAddress2">联系地址2</field>
+        <field name="orgTel1">联系电话1</field>
+        <field name="orgTel2">联系电话2</field>
+        <field name="orgBeginDate">成立日期</field>
+        <field name="orgType">机构类型</field>
+        <field name="orgPostal">机构邮编</field>
+        <field name="orgLegal">法人代表</field>
+        <field name="orgTaxNo">税务号</field>
+        <field name="orgRegNo">注册登记号</field>
+        <field name="orgBelongDist">所属地区</field>
+        <field name="status">机构状态</field>
+        <field name="memo">备注</field>
+        <field name="creator">创建人</field>
+        <field name="createDate">创建日期</field>
+        <field name="upOrgId">上级机构</field>
+    </fieldNames>
+</module>

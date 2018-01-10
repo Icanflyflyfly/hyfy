@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/bhtec</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <mapping class="com.bhtec.domain.pojo.seal.SealApplyEntity"/>
+        <mapping resource="com/bhtec/domain/pojo/seal/SealApplyEntity.hbm.xml"/>
+        <mapping resource="com/bhtec/domain/pojo/seal/SealApplyDetailEntity.hbm.xml"/>
+        <mapping class="com.bhtec.domain.pojo.seal.SealApplyDetailEntity"/>
+        <mapping class="com.bhtec.domain.pojo.seal.SealUnitEntity"/>
+        <mapping resource="com/bhtec/domain/pojo/seal/SealUnitEntity.hbm.xml"/>
+        <mapping class="com.bhtec.domain.pojo.seal.SealChipEntity"/>
+        <mapping resource="com/bhtec/domain/pojo/seal/SealChipEntity.hbm.xml"/>
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

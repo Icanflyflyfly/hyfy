@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.bhtec.domain.pojo.seal.SealApplyDetailEntity" table="seal_apply_detail" schema="bhtec"
+           catalog="bhtec">
+
+        <id name="sealApplyDetailId" type="java.lang.Long">
+            <column name="seal_apply_detail_id"/>
+            <generator class="native">
+                <param name="sequence">seal_apply_detail_seq</param>
+            </generator>
+        </id>
+        <property name="sealType">
+            <column name="seal_type" sql-type="varchar(20)" length="20" />
+        </property>
+        <property name="sealName">
+            <column name="seal_name" sql-type="varchar(50)" length="50" />
+        </property>
+        <property name="sealSpecification">
+            <column name="seal_specification" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="bingkanType">
+            <column name="bingkan_type" sql-type="varchar(20)" length="20" />
+        </property>
+        <property name="bingkanInfo">
+            <column name="bingkan_info" sql-type="varchar(50)" length="50" />
+        </property>
+        <property name="zhongkanType">
+            <column name="zhongkan_type" sql-type="varchar(20)" length="20" />
+        </property>
+        <property name="word1">
+            <column name="word1" sql-type="varchar(50)" length="50" />
+        </property>
+        <property name="word2">
+            <column name="word2" sql-type="varchar(50)" length="50" />
+        </property>
+        <property name="word3">
+            <column name="word3" sql-type="varchar(50)" length="50" />
+        </property>
+        <property name="word4">
+            <column name="word4" sql-type="varchar(50)" length="50" />
+        </property>
+        <property name="word5">
+            <column name="word5" sql-type="varchar(50)" length="50" />
+        </property>
+        <property name="word6">
+            <column name="word6" sql-type="varchar(50)" length="50" />
+        </property>
+        <property name="sealMaterial">
+            <column name="seal_material" sql-type="varchar(20)" length="20" />
+        </property>
+        <property name="oilType">
+            <column name="oil_type" sql-type="varchar(20)" length="20" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status" />
+        </property>
+        <many-to-one name="sealApplyEntity" lazy="false" class="com.bhtec.domain.pojo.seal.SealApplyEntity" fetch="select">
+            <column name="seal_apply_id" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

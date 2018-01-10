@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module> 
+  <dynamicLoadJs>
+	<listView>
+        <jsUrlShare>./ext/ux/grid/RowExpander.js</jsUrlShare>
+		<jsUrl>./js/com/bhtec/view/business/seal/sealpublish/SealpublishList.js</jsUrl>
+		<jsMainClassName>com.bhtec.view.business.seal.sealpublish.SealpublishList</jsMainClassName>
+	</listView>
+	<opView>
+		<jsUrl>./js/com/bhtec/view/business/seal/sealpublish/SealpublishVOp.js</jsUrl>
+		<jsMainClassName>com.bhtec.view.business.seal.sealpublish.SealpublishVOp</jsMainClassName>
+	</opView>
+  </dynamicLoadJs>
+  <fieldNames> 
+        <field name="createDate">委托申报时间</field>
+        <field name="approvalNum">批单编码</field>
+        <field name="unitName">印章使用单位</field>
+        <field name="sealNum">印章数量</field>
+        <field name="applyMemo">委托备注</field>
+        <field name="refuse">审批意见</field>
+        <field name="manager">负责人</field>
+        <field name="creator">经办人</field>
+        <field name="companyType">企业类型</field>
+        <field name="area">所属区域</field>
+        <field name="licenseNo">执照编号</field>
+      <field name="certificateType">证件类型</field>
+      <field name="certificateNo">证件号码</field>
+      <field name="phone">电话</field>
+      <field name="code">邮编</field>
+      <field name="address">地址</field>
+      <field name="sealType">印章类型</field>
+      <field name="sealName">印章名称</field>
+      <field name="sealSpecification">印章规格</field>
+      <field name="bingkanType">并刊类型</field>
+      <field name="bingkanInfo">税号/并刊</field>
+      <field name="zhongkanType">中刊类型</field>
+      <field name="word1">文字一</field>
+      <field name="word2">文字二</field>
+      <field name="word3">文字三</field>
+      <field name="word4">文字四</field>
+      <field name="word5">文字五</field>
+      <field name="word6">文字六</field>
+      <field name="sealMaterial">章面材料</field>
+      <field name="oilType">印油类型</field>
+      <field name="status">状态</field>
+      <field name="applyPerson">审刻人</field>
+      <field name="applyPersonPhone">审刻人电话</field>
+  </fieldNames>
+</module>

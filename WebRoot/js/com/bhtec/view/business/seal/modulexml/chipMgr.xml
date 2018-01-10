@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module> 
+  <dynamicLoadJs>
+	<listView>
+		<jsUrl>./js/com/bhtec/view/business/seal/chipmgr/ChipList.js</jsUrl>
+		<jsMainClassName>com.bhtec.view.business.seal.chipmgr.ChipList</jsMainClassName>
+	</listView>
+	<opView>
+		<jsUrl>./js/com/bhtec/view/business/seal/chipmgr/ChipVOp.js</jsUrl>
+		<jsMainClassName>com.bhtec.view.business.seal.chipmgr.ChipVOp</jsMainClassName>
+	</opView>
+  </dynamicLoadJs>
+  <fieldNames> 
+        <field name="chipSn">芯片编号</field>
+        <field name="creator">入库人</field>
+        <field name="createTime">入库时间</field>
+        <field name="chipStatus">芯片状态</field>
+
+        <field name="sealNo">印章编号</field>
+        <field name="sealTypeName">印章类型</field>
+        <field name="sealName">印章名称</field>
+        <field name="sealApprovalUnit">审批单位</field>
+
+        <field name="sealApprovalTime">审批时间</field>
+        <field name="sealBelongUnit">使用单位</field>
+        <field name="phone">单位电话</field>
+        <field name="unitAddress">单位地址</field>
+  </fieldNames>
+</module>

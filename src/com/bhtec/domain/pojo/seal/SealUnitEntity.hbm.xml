@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.bhtec.domain.pojo.seal.SealUnitEntity" table="seal_unit" schema="bhtec" catalog="bhtec">
+        <id name="sealUnitId" type="java.lang.Long">
+            <column name="seal_unit_id"/>
+            <generator class="native">
+                <param name="sequence">seal_unit_seq</param>
+            </generator>
+        </id>
+        <property name="unitName">
+            <column name="unit_name" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="unitNamePy">
+            <column name="unit_name_py" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="companyType">
+            <column name="company_type" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="area">
+            <column name="area" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="licenseNo">
+            <column name="license_no" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="manager">
+            <column name="manager" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="phone">
+            <column name="phone" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="areaName">
+            <column name="area_name" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="creator">
+            <column name="creator" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="status">
+            <column name="status" sql-type="varchar(5)" length="5" not-null="true"/>
+        </property>
+        <property name="createDate" type="java.util.Date">
+            <column name="create_date" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+    <dynamicLoadJs>
+        <!-- 印章申刻单位查询 -->
+        <listView>
+            <jsUrlShare>./ext/ux/grid/RowExpander.js</jsUrlShare>
+            <jsUrl>./js/com/bhtec/view/business/seal/sealunitquery/SealUnitQueryList.js</jsUrl>
+            <jsMainClassName>com.bhtec.view.business.seal.sealunitquery.SealUnitQueryList</jsMainClassName>
+        </listView>
+        <opView>
+            <jsUrl>./js/com/bhtec/view/business/seal/sealunitquery/SealUnitQueryVOp.js</jsUrl>
+            <jsMainClassName>com.bhtec.view.business.seal.sealunitquery.SealUnitQueryVOp</jsMainClassName>
+        </opView>
+    </dynamicLoadJs>
+    <fieldNames>
+        <field name="sealUnitId">单位代码</field>
+        <field name="unitName">单位名称</field>
+        <field name="unitNamePy">英文名称</field>
+        <field name="companyType">企业类型</field>
+        <!--<field name="area">所属区域</field>-->
+        <field name="manager">负责人</field>
+        <field name="licenseNo">单位证件号码</field>
+        <field name="certificateType">负责人证件类型</field>
+        <field name="certificateNo">负责人证件号码</field>
+        <field name="address">地址</field>
+        <field name="code">邮编</field>
+        <field name="phone">单位电话</field>
+
+    </fieldNames>
+</module>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.bhtec.domain.pojo.seal.SealChipEntity" table="seal_chip" schema="bhtec" catalog="bhtec">
+        <id name="chipId" type="java.lang.Long">
+            <column name="chip_id"/>
+            <generator class="native">
+                <param name="sequence">seal_chip_seq</param>
+            </generator>
+        </id>
+        <property name="chipSn">
+            <column name="chip_sn" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="createTime">
+            <column name="create_time" sql-type="timestamp" not-null="true"/>
+        </property>
+        <property name="creator">
+            <column name="creator" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="chipStatus">
+            <column name="chip_status" sql-type="varchar" not-null="true"/>
+        </property>
+        <property name="attr1">
+            <column name="attr1" sql-type="varchar(20)" length="20" not-null="false"/>
+        </property>
+        <property name="attr2">
+            <column name="attr2" sql-type="varchar(20)" length="20" not-null="false"/>
+        </property>
+        <property name="sealNo">
+            <column name="seal_no" sql-type="varchar(50)" length="50" not-null="false"/>
+        </property>
+        <property name="sealType">
+            <column name="seal_type" sql-type="varchar(10)" length="10" not-null="false"/>
+        </property>
+        <property name="sealTypeName">
+            <column name="seal_type_name" sql-type="varchar(50)" length="50" not-null="false"/>
+        </property>
+        <property name="sealName">
+            <column name="seal_name" sql-type="varchar(100)" length="100" not-null="false"/>
+        </property>
+        <property name="sealApprovalUnit">
+            <column name="seal_approval_unit" sql-type="varchar(100)" length="100" not-null="false"/>
+        </property>
+        <property name="sealApprovalTime">
+            <column name="seal_approval_time" sql-type="timestamp(6)" not-null="false"/>
+        </property>
+        <property name="sealBelongUnit">
+            <column name="seal_belong_unit" sql-type="varchar(100)" length="100" not-null="false"/>
+        </property>
+        <property name="sealRepresentative">
+            <column name="seal_representative" sql-type="varchar(10)" length="10" not-null="false"/>
+        </property>
+        <property name="sealRepresentativeIdno">
+            <column name="seal_representative_idno" sql-type="varchar(20)" length="20" not-null="false"/>
+        </property>
+        <property name="sealOpName">
+            <column name="seal_op_name" sql-type="varchar(10)" length="10" not-null="false"/>
+        </property>
+        <property name="sealOpIdno">
+            <column name="seal_op_idno" sql-type="varchar(20)" length="20" not-null="false"/>
+        </property>
+        <property name="phone">
+            <column name="phone" sql-type="varchar(15)" length="15" not-null="false"/>
+        </property>
+        <property name="unitAddress">
+            <column name="unit_address" sql-type="varchar(100)" length="100" not-null="false"/>
+        </property>
+        <property name="attr3">
+            <column name="attr3" sql-type="varchar(20)" length="20" not-null="false"/>
+        </property>
+        <property name="attr4">
+            <column name="attr4" sql-type="varchar(20)" length="20" not-null="false"/>
+        </property>
+        <property name="attr5">
+            <column name="attr5" sql-type="varchar(20)" length="20" not-null="false"/>
+        </property>
+    </class>
+</hibernate-mapping>

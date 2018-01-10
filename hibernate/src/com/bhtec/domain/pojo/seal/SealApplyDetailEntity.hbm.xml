@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.bhtec.domain.pojo.seal.SealApplyDetailEntity" table="seal_apply_detail" schema="bhtec"
+           catalog="bhtec">
+        <id name="id">
+            <column name="seal_apply_detail_id" sql-type="bigint"/>
+        </id>
+        <property name="sealType">
+            <column name="seal_type" sql-type="bigint" not-null="true"/>
+        </property>
+        <property name="sealName">
+            <column name="seal_name" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sealSpecification">
+            <column name="seal_specification" sql-type="bigint" not-null="true"/>
+        </property>
+        <property name="bingkanType">
+            <column name="bingkan_type" sql-type="bigint" not-null="true"/>
+        </property>
+        <property name="bingkanInfo">
+            <column name="bingkan_info" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="zhongkanType">
+            <column name="zhongkan_type" sql-type="bigint" not-null="true"/>
+        </property>
+        <property name="word1">
+            <column name="word1" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="word2">
+            <column name="word2" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="word3">
+            <column name="word3" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="word4">
+            <column name="word4" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="word5">
+            <column name="word5" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="word6">
+            <column name="word6" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sealMaterial">
+            <column name="seal_material" sql-type="bigint" not-null="true"/>
+        </property>
+        <property name="oilType">
+            <column name="oil_type" sql-type="bigint" not-null="true"/>
+        </property>
+        <property name="sealApplyId">
+            <column name="seal_apply_id" sql-type="bigint" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

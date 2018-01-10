@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+
+<beans>
+	<!-- 印章委托DAO -->
+	<bean id="sealApplyDao" class="com.bhtec.dao.impl.seal.sealapply.SealApplyDaoHibImpl"
+		  parent="baseDao">
+	</bean>
+
+	<bean id="sealChipDao" class="com.bhtec.dao.impl.seal.chip.SealChipDaoHibImpl"
+		  parent="baseDao">
+	</bean>
+
+	<!-- 数据查询DAO -->
+	<bean id="sealDataQueryDao" class="com.bhtec.dao.impl.seal.dataquery.SealDataQueryDaoHibImpl"
+		  parent="baseDao">
+	</bean>
+</beans>

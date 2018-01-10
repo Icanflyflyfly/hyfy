@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+    <dynamicLoadJs>
+        <!-- 印章统一信息查询 -->
+        <listView>
+            <jsUrlShare>./ext/ux/grid/RowExpander.js</jsUrlShare>
+            <jsUrl>./js/com/bhtec/view/business/seal/sealunifyquery/SealUnifyQueryList.js</jsUrl>
+            <jsMainClassName>com.bhtec.view.business.seal.sealunifyquery.SealUnifyQueryList</jsMainClassName>
+        </listView>
+        <opView>
+            <jsUrl>./js/com/bhtec/view/business/seal/sealunifyquery/SealunifyQueryVOp.js</jsUrl>
+            <jsMainClassName>com.bhtec.view.business.seal.sealunifyquery.SealunifyQueryVOp</jsMainClassName>
+        </opView>
+    </dynamicLoadJs>
+    <fieldNames>
+        <field name="approvalNum">印章编码</field>
+        <field name="unitName">使用单位名称</field>
+        <field name="sealMaterial">章面内容</field>
+        <field name="applyDate">审批日期</field>
+        <field name="sealType">类型</field>
+        <field name="status">状态</field>
+        <field name="createDate">制作日期</field>
+    </fieldNames>
+</module>

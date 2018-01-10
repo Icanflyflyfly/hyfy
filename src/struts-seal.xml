@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	 
+	<package name="seal_json" extends="plt_json">
+		 <action name="sealAction" class="sealAction">
+			<result name="success"  type="json"/>
+		 </action>
+		<action name="sealDetailAction" class="sealDetailAction">
+			<result name="success"  type="json"/>
+		</action>
+		<action name="sealUnitAction" class="sealUnitAction">
+			<result name="success"  type="json"/>
+		</action>
+		<action name="sealChipAction" class="sealChipAction">
+			<result name="success"  type="json"/>
+		</action>
+		<!-- 数据综合查询 start-->
+		<action name="sealUnitQueryAction" class="sealUnitQueryAction">
+			<result name="success"  type="json"/>
+		</action>
+		<action name="sealQueryAction" class="sealQueryAction">
+			<result name="success"  type="json"/>
+		</action>
+		<action name="sealApplyQueryAction" class="sealApplyQueryAction">
+			<result name="success"  type="json"/>
+		</action>
+		<!-- 数据综合查询 end-->
+	</package>
+</struts>
