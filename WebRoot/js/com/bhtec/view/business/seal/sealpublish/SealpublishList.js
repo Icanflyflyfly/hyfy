@@ -427,8 +427,8 @@ com.bhtec.view.business.seal.sealpublish.SealpublishList = function(config){
 				}
 
 
-			}else if('reapply' == optFunLink){
-				moduleForm.modifyForm();
+			}else if('publish' == optFunLink){
+				window.open('page/sealtemplate/seal.html');
 			}else if('recall' == optFunLink){
 				moduleForm.recall();
 			}else if('recover' == optFunLink){

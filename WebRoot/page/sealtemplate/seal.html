@@ -1,0 +1,422 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>seal Template</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/seal.css" rel="stylesheet">
+    <!--link href="css/print.css" rel="stylesheet"type="text/css" media="print"/-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.jqprint-0.3.js"></script>
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap3/js/bootstrap.min.js"></script>
+    <script src="js/sealCanvas.js"></script>
+</head>
+<div class="title">
+  样章选择区：
+</div>
+<div class="headerButtons">
+       <div id="general_40" class="buttonDiv">
+        <img class="img-circle img-responsive button" alt="circle" src="images/bg.png"></img>
+        <span class="sealText">40#普通章</span>
+      </div>
+
+      <div id="general_38" class="buttonDiv">
+       <img class="img-circle img-responsive button" alt="circle" src="images/bg.png"></img>
+       <span class="sealText">38#财务专用章</span>
+     </div>
+     <div id="general_30_cai" class="buttonDiv">
+       <img class="img-circle img-responsive button" alt="circle" src="images/bg.png"></img>
+       <span class="sealText">30#财务专用章</span>
+     </div>
+     <div id="general_20_faren" class="buttonDiv">
+       <img class="img-circle img-responsive button" alt="circle" src="images/bg.png"></img>
+       <span class="sealText">20#法人章</span>
+     </div>
+     <div id="general_42" class="buttonDiv">
+        <img class="img-circle img-responsive button" alt="circle" src="images/bg.png"></img>
+        <span class="sealText">42#合同专用章</span>
+      </div>
+
+      <div id="general_42_gh" class="buttonDiv">
+        <img class="img-circle img-responsive button" alt="circle" src="images/bg.png"></img>
+        <span class="sealText">42#工会章</span>
+      </div>
+
+     <div id="general_40_tuan" class="buttonDiv">
+       <img class="img-circle img-responsive button" alt="circle" src="images/bg.png"></img>
+       <span class="sealText">40#共青团章</span>
+     </div>
+
+
+      <div id="general_42_dang" class="buttonDiv">
+         <img class="img-circle img-responsive button" alt="circle" src="images/bg.png"></img>
+         <span class="sealText">42#党章</span>
+       </div>
+
+      <!--div id="" class="buttonDiv">
+        <img class="img-circle img-responsive button" alt="circle" src="images/bg.png"></img>
+        <span class="sealText">30X40发票专用章</span>
+      </div>
+      <div id="" class="buttonDiv">
+        <img class="img-circle img-responsive button" alt="circle" src="images/bg.png"></img>
+        <span class="sealText">50X36报关专用章</span>
+      </div-->
+
+
+</div>
+<div style="width:100%">
+    <div>
+        <div class="preview">
+          样章预览区：<span id="curr_seal_name" style="color:#F00;"></span>
+        </div>
+        <div class="edit">
+          样章编辑区：
+        </div>
+    </div>
+
+    <div>
+      <div class="canvasPanel">
+          <canvas  id="canvas_1" style="display:none;-webkit-font-smoothing: subpixel-antialiased;margin-left:1px;border:1px solid red;"></canvas>
+      </div>
+      <div class="editPanel">
+        <form class="form-horizontal" role="form">
+              <h4 class="h4" >印章基本信息</h4>
+              <div class="form-group" style="margin-right:3px;">
+                <label for="firstname" class="col-sm-4 primary center control-label">印章名称</label>
+                <div class="col-sm-8">
+                  <input id="companyName" value="承德印诺系统集成有限公司" type="text" class="form-control" id="firstname" placeholder="请输入印章名称">
+                </div>
+              </div>
+              <div class="form-group" style="margin-right:3px;">
+                <label for="firstname"  class="col-sm-4 primary center control-label">印章编号</label>
+                <div class="col-sm-8">
+                  <input id="sealNum" value="CDY130801130000001" type="text" class="form-control" id="firstname" placeholder="请输入印章编号">
+                </div>
+              </div>
+
+              <p style="margin:0px 5px;text-align:center;">
+                 <button id="base_setting" type="button" class="btn btn-primary" style="margin-right:15%;width:30%;">设置</button>
+                 <button id="clear_setting" type="button" class="btn btn-primary" style="width:30%;">清空</button>
+              </p>
+              <h4 class="h4" >印章框架设置</h4>
+              <div class="form-group" style="margin-right:3px;">
+                <label for="line_num"  class="col-sm-4 primary center control-label">防伪纹线条数</label>
+                <div class="col-sm-3">
+                  <input id="line_num" type="number" class="form-control" value="10" readonly="true">
+                </div>
+                <button id="line_num_add" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-up"></span> 增加
+                </button>
+                <button id="line_num_reduce" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-down"></span> 减少
+                </button>
+              </div>
+
+              <div class="form-group" style="margin-right:3px;">
+                <label for="line_width"  class="col-sm-4 primary center control-label">外边框粗细</label>
+                <div class="col-sm-3">
+                  <input id="line_width" type="number" class="form-control" value="4" readonly="true">
+                </div>
+                <button id="border_add" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-up"></span> 加粗
+                </button>
+                <button id="border_reduce" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-down"></span> 减细
+                </button>
+              </div>
+
+              <div class="form-group" style="margin-right:3px;">
+                <label for="line_size"  class="col-sm-4 primary center control-label">外边框大小</label>
+                <div class="col-sm-3">
+                  <input id="line_size" type="number" class="form-control" value="98" readonly="true">
+                </div>
+                <button id="border_bigger" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-up"></span> 加大
+                </button>
+                <button id="border_smaller" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-down"></span> 减小
+                </button>
+              </div>
+
+              <div class="form-group" style="margin-right:3px;">
+                <label for="seal_border"  class="col-sm-4 primary center control-label">五角星</label>
+                <div class="col-sm-3">
+                  <input id="star5" type="number" class="form-control" value="32"  readonly="true">
+                </div>
+                <button id="star5_bigger" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-up"></span> 加大
+                </button>
+                <button id="star5_smaller" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-down"></span> 减小
+                </button>
+              </div>
+
+              <h4 class="h4" >印章名称设置</h4>
+
+              <div id="row_font_size_id" class="form-group" style="margin-right:3px;">
+                <label for="seal_border"  class="col-sm-4 primary center control-label">横排字体大小</label>
+                <div class="col-sm-3">
+                  <input id="sealname_size" type="number" class="form-control" value="22"  readonly="true">
+                </div>
+                <button id="sealname_size_bigger" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-up"></span> 加大
+                </button>
+                <button id="sealname_size_smaller" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-down"></span> 减小
+                </button>
+              </div>
+
+              <div id="row_adjust_id" class="form-group" style="margin-right:3px;">
+                <label for="seal_border"  class="col-sm-4 primary center control-label">横排上下调节</label>
+                <div class="col-sm-3">
+                  <input id="sealname_adjust" type="number" class="form-control" value="40"  readonly="true">
+                </div>
+                <button id="sealname_adjust_up" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-up"></span> 向上
+                </button>
+                <button id="sealname_adjust_down" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-down"></span> 向下
+                </button>
+              </div>
+
+              <div id="row_font_adjust_id" class="form-group" style="margin-right:3px;">
+                <label for="seal_border"  class="col-sm-4 primary center control-label">横排字体宽度</label>
+                <div class="col-sm-3">
+                  <input id="sealname_font_adjust" type="number" class="form-control" value="90"  readonly="true">
+                </div>
+                <button id="sealname_adjust_font_up" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-up"></span> 加大
+                </button>
+                <button id="sealname_adjust_font_down" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-down"></span> 减小
+                </button>
+              </div>
+
+              <div class="form-group" style="margin-right:3px;">
+                <label for="seal_border"  class="col-sm-4 primary center control-label">单位字体大小</label>
+                <div class="col-sm-3">
+                  <input id="sealunit_size" type="number" class="form-control" value="22"  readonly="true">
+                </div>
+                <button id="sealunit_size_bigger" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-up"></span> 加大
+                </button>
+                <button id="sealunit_size_smaller" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-down"></span> 减小
+                </button>
+              </div>
+
+              <div class="form-group" style="margin-right:3px;">
+                <label for="seal_border"  class="col-sm-4 primary center control-label">单位字体宽度</label>
+                <div class="col-sm-3">
+                  <input id="sealunit_height" type="number" class="form-control" value="20"  readonly="true">
+                </div>
+                <button id="sealunit_height_bigger" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-up"></span> 加大
+                </button>
+                <button id="sealunit_height_smaller" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-down"></span> 减小
+                </button>
+              </div>
+
+              <div class="form-group" style="margin-right:3px;">
+                <label for="seal_border"  class="col-sm-4 primary center control-label">单位角度大小</label>
+                <div class="col-sm-3">
+                  <input id="sealangle_size" type="number" class="form-control" value="0.322"  readonly="true">
+                </div>
+                <button id="sealangle_bigger" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-up"></span> 加大
+                </button>
+                <button id="sealangle_smaller" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-down"></span> 减小
+                </button>
+              </div>
+
+              <div class="form-group" style="margin-right:3px;">
+                <label for="seal_border"  class="col-sm-4 primary center control-label">单位旋转角度</label>
+                <div class="col-sm-3">
+                  <input id="sealrotate_size" type="number" class="form-control" value="2.61"  readonly="true">
+                </div>
+                <button id="sealrotate_bigger" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-up"></span> 加大
+                </button>
+                <button id="sealrotate_smaller" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-down"></span> 减小
+                </button>
+              </div>
+
+              <div class="form-group" style="margin-right:3px;">
+                <label for="seal_border"  class="col-sm-4 primary center control-label">单位边框间距</label>
+                <div class="col-sm-3">
+                  <input id="sealunit_span" type="number" class="form-control" value="27" readonly="true">
+                </div>
+                <button id="sealunit_span_bigger" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-up"></span> 加大
+                </button>
+                <button id="sealunit_span_smaller" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-down"></span> 减小
+                </button>
+              </div>
+
+          </form>
+      </div>
+
+
+      <div class="editPanel">
+        <form class="form-horizontal" role="form">
+              <h4 class="h4" >印章编号设置</h4>
+              <div class="form-group" style="margin-right:3px;">
+                <label for="seal_border"  class="col-sm-4 primary center control-label">编号字体大小</label>
+                <div class="col-sm-3">
+                  <input id="sealno_size" type="number" class="form-control" value="12"  readonly="true">
+                </div>
+                <button id="sealno_bigger" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-up"></span> 加大
+                </button>
+                <button id="sealno_smaller" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-down"></span> 减小
+                </button>
+              </div>
+
+              <div class="form-group" style="margin-right:3px;">
+                <label for="seal_border"  class="col-sm-4 primary center control-label">编号角度大小</label>
+                <div class="col-sm-3">
+                  <input id="sealno_angle" type="number" class="form-control" value="0.834"  readonly="true">
+                </div>
+                <button id="sealno_angle_bigger" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-up"></span> 加大
+                </button>
+                <button id="sealno_angle_smaller" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-down"></span> 减小
+                </button>
+              </div>
+
+              <div class="form-group" style="margin-right:3px;">
+                <label for="seal_border"  class="col-sm-4 primary center control-label">编号旋转角度</label>
+                <div class="col-sm-3">
+                  <input id="sealnorotate_size" type="number" class="form-control" value="0.35"  readonly="true">
+                </div>
+                <button id="sealnorotate_bigger" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-up"></span> 加大
+                </button>
+                <button id="sealnorotate_smaller" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-down"></span> 减小
+                </button>
+              </div>
+
+              <div class="form-group" style="margin-right:3px;">
+                <label for="seal_border"  class="col-sm-4 primary center control-label">编号与边框间距</label>
+                <div class="col-sm-3">
+                  <input id="sealno_span" type="number" class="form-control" value="1" readonly="true">
+                </div>
+                <button id="sealno_span_bigger" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-up"></span> 加大
+                </button>
+                <button id="sealno_span_smaller" type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-arrow-down"></span> 减小
+                </button>
+              </div>
+
+              <div id="special_setting_id">
+                <h4 class="h4" >特殊设置</h4>
+                <div class="form-group" style="margin-right:3px;">
+                  <label for="seal_border"  class="col-sm-4 primary center control-label">内边框粗细</label>
+                  <div class="col-sm-3">
+                    <input id="seal_inborder" type="number" class="form-control" value="3"  readonly="true">
+                  </div>
+                  <button id="seal_inborder_bigger" type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-arrow-up"></span> 加粗
+                  </button>
+                  <button id="seal_inborder_smaller" type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-arrow-down"></span> 减细
+                  </button>
+                </div>
+
+                <div class="form-group" style="margin-right:3px;">
+                  <label for="seal_border"  class="col-sm-4 primary center control-label">内边框大小</label>
+                  <div class="col-sm-3">
+                    <input id="seal_inborder_size" type="number" class="form-control" value="94"  readonly="true">
+                  </div>
+                  <button id="seal_inborder_size_bigger" type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-arrow-up"></span> 加大
+                  </button>
+                  <button id="seal_inborder_size_smaller" type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-arrow-down"></span> 减小
+                  </button>
+                </div>
+              </div>
+
+
+              <div>
+                  <h4 class="h4" >印章生成区</h4>
+                  <p style="margin:0px 5px;text-align:center;">
+                    <button id="get_seal" type="button" class="btn btn-primary btn-lg btn-block" >生成印章</button>
+                  </p>
+                  <p class="gen_seal_image">
+                    <image id="seal_image" src="" style="margin:0px;padding:0px;" />
+                  </p>
+              </div>
+
+              <div>
+                  <h4 class="h4" >输出区</h4>
+                  <p style="margin:0px 5px;text-align:center;">
+                     <button id="down_seal" type="button" class="btn btn-primary btn-lg btn-block" >下载印章</button>
+                     <button id="print_seal" type="button" class="btn btn-primary btn-lg btn-block" >打印印章</button>
+                  </p>
+              </div>
+
+          </form>
+      </div>
+
+
+    </div>
+</div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					提示
+				</h4>
+			</div>
+			<div class="modal-body">
+				<span id="promotText"></span>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+</html>
+<script src="js/sealSetting.js"></script>
+<script language="javascript">
+//
+// var mm = conv.pxConversionMm(151);
+// console.log('mm = '+mm);
+//
+// var mm2 = conv.pxConversionMm(114);
+// console.log('mm2 = '+mm2);
+
+//新隶隶书简 法人章
+//发票专用章，要求
+//字体调高 可调整
+//印章大小
+//五角星14mm 工会委员会
+//直排文字调高
+//边纹线 随机 曲线 10条线 8个粗
+</script>
